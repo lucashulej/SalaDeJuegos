@@ -1,4 +1,4 @@
-
+/*
 form {
     border: 10px solid #f1f1f1;
     padding: 10px;
@@ -15,7 +15,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    /*background-color: #4CAF50;*/
+    /*background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -57,7 +57,7 @@ span.psw {
     padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -116,3 +116,4 @@ span.psw {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+*/
