@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: "Neon";
+    outline: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url('./assets/imagenes/fondo.jpg');
+    background-size: 100vw 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    --red: #ff2a6d;
+    --white: #d1f7ff;
+    --light-blue: #05d9e8;
+    --dark-blue: #01012b;
+}
+
+.back {
+    background: var(--red);
+    border-radius: 100%;
+    margin-top: 10px;
+}
+
+@font-face{
+    font-family: "8Bits";
+    src: url("./assets/fonts/8-BITWONDER.TTF");
+}
+
+@font-face{
+    font-family: "Cyberpunk";
+    src: url("./assets/fonts/Cyberpunk.ttf");
+}
+
+@font-face{
+    font-family: "Neon";
+    src: url("./assets/fonts/NEONCLUBMUSIC.otf");
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}

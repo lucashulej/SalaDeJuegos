@@ -1,43 +1,54 @@
-.imagenDeQuienSoy{
-    width: 100%;
-   
+.cnt-presentacion {
+    width: 50vw;
+    height: 75vh;
+    border-radius: 15%;
+    border: 4px solid var(--red);
+    overflow: hidden;
+    animation: flicker 2s infinite alternate;  
+    background: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.btn-back-presentacion {
+    background: red;
+    border: 0px;
+    top: 10%;
+    left: 10%;
+    position: relative;
+}
+
+img {
+    height: 25%;
+    border-radius: 25%;
+    border: 2px solid var(--light-red);
+}
+
+.img2 {
+    background: var(--red);
+    border-radius: 100%;
+}
+
+.lbl-presentacion {
+    width: 60%;
+    color: var(--red);
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        box-shadow:
+        0 0 .5rem #fff,
+        0 0 .5rem #fff,
+        0 0 2rem var(--red),
+        0 0 2rem var(--red),
+        0 0 4rem var(--red),
+        0 0 4rem var(--red)        
     }
-body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-}
-p {font-size: 16px;}
-.margin {margin-bottom: 45px;}
-.bg-1 { 
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
-}
-.bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-}
-.bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-}
-.bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
-}
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-.navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
-}
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+  }
+  

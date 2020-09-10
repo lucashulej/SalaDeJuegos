@@ -1,86 +1,87 @@
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+* {
+    animation: fadeIn 1.5s;  
 }
 
-/* Set a style for all buttons */
+.cnt-registro {
+    width: 50vw;
+    height: 75vh;
+    background: var(--dark-blue);
+    border: 4px solid var(--red);
+    border-radius: 15%;
+    animation: flicker 2s infinite alternate;  
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.lbl-title-registro {
+    width: 50%;
+    font-size: 3rem;
+    border: 0px;
+}
+
+.lbl-cnt-registro {
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+}
+
+.btn-cnt-registro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+label {
+    color: var(--red);
+    text-align: center;
+}
+
+input {
+    border: 0px;
+    border-bottom: 2px solid var(--light-blue);
+    width: 50%;
+    text-align: center;
+    color: var(--red);
+    background: transparent;
+}
+
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+    width: 30%;
+    border: 2px solid var(--light-blue);
+    color: var(--red);
+    background: transparent;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
+button:active {
+    border-bottom: 4px solid transparent;
+    border-bottom-color:  rgba(0, 0, 0, 0.300);
+    border-right: 4px solid transparent;
+    border-right-color:  rgba(0, 0, 0, 0.300);
+    transform: translateY(4px);
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {float:left;width:50%}
-
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 98%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    color: #000;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-       width: 100%;
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        box-shadow:
+        0 0 .5rem #fff,
+        0 0 .5rem #fff,
+        0 0 2rem var(--red),
+        0 0 2rem var(--red),
+        0 0 4rem var(--red),
+        0 0 4rem var(--red)        
     }
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
 }

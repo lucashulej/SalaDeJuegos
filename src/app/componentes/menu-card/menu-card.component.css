@@ -1,57 +1,72 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
-    max-width: 300px;
-   height: 100%;
-    margin: 10px;
-    padding-bottom: 10px;
-    float: left;
-  background-color: #DEF3A6;
-    text-align: center;
+* {
+  animation: fadeIn 1.5s;  
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
+.cnt-juegos {
+  width: 50vw;
+  height: 75vh;
+  border-radius: 15%;
+  background: var(--light-blue);
+  border: 4px solid var(--red);
+  overflow: hidden;
+  animation: flicker 2s infinite alternate;  
+}
+
+label {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  margin: 0;
+}
+
+.lbl-juegos {
+  height: 20%;
+  font-size: 2rem;
+  background: var(--red);
+  color: var(--dark-blue);
+}
+
+.lbl-juego {
+  height: 50%;
+  font-size: 1rem;
+  color: var(--red);
+}
+
 img {
-    border-radius: 5px 5px 0 0;
-    width: 200px;
-    height: 200px;
-}/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
+  height: 50%;
 }
 
+.div-juegos {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
 
-.button{
-    margin-left: 1px;
-    display: inline-block;
-    width: 90%;
-    padding: 5px 15px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+button {
+  width: 33.33%;
+  height: 40%;
+  border: 0px;
+  background: var(--light-blue);
+}
 
-    border: none;
-    outline: 0;
- 
-    padding: 8px;
-    color: white;
-   /* background-color: #000;*/
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      box-shadow:
+      0 0 .5rem #fff,
+      0 0 .5rem #fff,
+      0 0 2rem var(--red),
+      0 0 2rem var(--red),
+      0 0 4rem var(--red),
+      0 0 4rem var(--red)        
   }
-  
-  .button:hover {background-color: #3e8e41}
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
