@@ -1,0 +1,11 @@
+<app-nav-bar [ruta]="'Juegos'"></app-nav-bar>
+<div class="cnt-anagrama">
+  <label class="lbl-anagrama">anagrama</label>
+  <div class="cnt-juego-anagrama">
+    <h2 *ngIf="comenzar && !mostrarMensaje">{{palabraSecretaDesordenada}}</h2>
+    <input *ngIf="comenzar && !mostrarMensaje" type="text" [(ngModel)]="palabraIngresada" placeholder="ingrese la palabra">
+    <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
+    <button *ngIf="comenzar && !mostrarMensaje" type="button" (click)="verificar()">verificar</button>
+    <button *ngIf="!comenzar" type="button" (click)="comenzarJuego()">comenzar</button>
+  </div>
+</div>
