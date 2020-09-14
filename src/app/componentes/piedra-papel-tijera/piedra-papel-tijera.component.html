@@ -1,0 +1,18 @@
+<app-nav-bar [ruta]="'Juegos'"></app-nav-bar>
+<div class="cnt-ppt">
+  <label class="lbl-ppt">piedra, papel o tijera</label>
+  <div class="cnt-juego-ppt">
+    <div *ngIf="jugadaActiva" class="cnt-resultados-ppt">
+        <div class="jugador" [ngClass]="{fondoPiedra: jugadaElegida == 'piedra', fondoPapel: jugadaElegida == 'papel', fondoTijera: jugadaElegida == 'tijera'}"></div>
+        <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
+        <div class="cpu" [ngClass]="{fondoPiedra: jugadaCpu == 'piedra', fondoPapel: jugadaCpu == 'papel', fondoTijera: jugadaCpu == 'tijera'}"></div>
+    </div>
+    <h2 *ngIf="comenzar && !jugadaActiva">eliga su jugada</h2>
+    <div *ngIf="comenzar && !jugadaActiva" class="cnt-jugadas-ppt">
+        <button class="piedra" (click)="jugar('piedra')"></button>
+        <button class="papel" (click)="jugar('papel')"></button>
+        <button class="tijera" (click)="jugar('tijera')"></button>
+    </div>
+    <button *ngIf="!comenzar" type="button" (click)="comenzarJuego()">comenzar</button>
+  </div>
+</div>

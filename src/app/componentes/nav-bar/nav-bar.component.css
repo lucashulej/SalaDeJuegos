@@ -1,0 +1,68 @@
+.cnt-navbar {
+    height: 5vh;
+    width: 50vw;
+    background: transparent;
+    top: 0vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: 0px;
+    /*
+    border-left: 4px solid var(--red);
+    border-right: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
+    */
+}
+
+button {
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    background: transparent;
+    color: var(--light-blue);
+    font-size: 0.8rem;
+    animation: textFlicker 2s infinite alternate; 
+}
+
+div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.cnt-primario {
+    width: 60%;
+    animation: textFlicker 2s infinite alternate; 
+}
+
+.cnt-secundario {
+    width: 20%;
+}
+
+label {
+    color: var(--light-blue);
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@keyframes textFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--light-blue),
+            0 0 4rem var(--light-blue),
+            0 0 6rem var(--light-blue),
+            0 0 8rem var(--light-blue),
+            0 0 10rem var(--light-blue); 
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+}

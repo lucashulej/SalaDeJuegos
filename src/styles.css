@@ -19,22 +19,6 @@ body{
     --dark-blue: #01012b;
 }
 
-.back {
-    background: var(--red);
-    border-radius: 100%;
-    margin-top: 10px;
-}
-
-@font-face{
-    font-family: "8Bits";
-    src: url("./assets/fonts/8-BITWONDER.TTF");
-}
-
-@font-face{
-    font-family: "Cyberpunk";
-    src: url("./assets/fonts/Cyberpunk.ttf");
-}
-
 @font-face{
     font-family: "Neon";
     src: url("./assets/fonts/NEONCLUBMUSIC.otf");
@@ -43,4 +27,20 @@ body{
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        box-shadow:
+        0 0 .5rem #fff,
+        0 0 .5rem #fff,
+        0 0 2rem var(--red),
+        0 0 2rem var(--red),
+        0 0 4rem var(--red),
+        0 0 4rem var(--red)        
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
 }

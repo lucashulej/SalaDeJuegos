@@ -1,0 +1,19 @@
+<app-nav-bar [ruta]="'Juegos'"></app-nav-bar>
+<div class="cnt-tateti">
+  <label class="lbl-tateti">ta - te - ti</label>
+  <div class="cnt-juego-tateti">
+    <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
+    <div *ngIf="comenzar && !mostrarMensaje" class="cnt-tablero-tateti">
+        <button class="casilla_0" [ngClass]="{circulo: cuadrados[0] == 'o', cruz: cuadrados[0] == 'x'}" (click)="jugar(0)"></button>
+        <button class="casilla_1" [ngClass]="{circulo: cuadrados[1] == 'o', cruz: cuadrados[1] == 'x'}" (click)="jugar(1)"></button>
+        <button class="casilla_2" [ngClass]="{circulo: cuadrados[2] == 'o', cruz: cuadrados[2] == 'x'}" (click)="jugar(2)"></button>
+        <button class="casilla_3" [ngClass]="{circulo: cuadrados[3] == 'o', cruz: cuadrados[3] == 'x'}" (click)="jugar(3)"></button>
+        <button class="casilla_4" [ngClass]="{circulo: cuadrados[4] == 'o', cruz: cuadrados[4] == 'x'}" (click)="jugar(4)"></button>
+        <button class="casilla_5" [ngClass]="{circulo: cuadrados[5] == 'o', cruz: cuadrados[5] == 'x'}" (click)="jugar(5)"></button>
+        <button class="casilla_6" [ngClass]="{circulo: cuadrados[6] == 'o', cruz: cuadrados[6] == 'x'}" (click)="jugar(6)"></button>
+        <button class="casilla_7" [ngClass]="{circulo: cuadrados[7] == 'o', cruz: cuadrados[7] == 'x'}" (click)="jugar(7)"></button>
+        <button class="casilla_8" [ngClass]="{circulo: cuadrados[8] == 'o', cruz: cuadrados[8] == 'x'}" (click)="jugar(8)"></button>
+    </div>
+    <button *ngIf="!comenzar" type="button" (click)="comenzarJuego()">comenzar</button>
+  </div>
+</div>

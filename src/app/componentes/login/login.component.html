@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div class="cnt-login">
   <form>
       <label class="lbl-title-login">LOGIN</label>
@@ -11,8 +12,8 @@
       </div>
       <div class="btn-cnt-login">
         <!--<button type="button" *ngIf="logeando" (click)="MoverBarraDeProgreso()">Ingresar</button>-->
-        <button type="button" routerLink="/Principal" >Ingresar</button>
-        <button type="button" routerLink="/Registro" >Registrarse</button>
+        <button type="button" (click)="cambiarPagina('Principal')">Ingresar</button>
+        <button type="button" (click)="cambiarPagina('Registro')" >Registrarse</button>
       </div>
       <div *ngIf="!logeando" class="progress">
         <div class="progress-bar progress-bar-info progress-bar-striped active" [class]="clase" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width]="ProgresoDeAncho" >

@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { PrincipalComponent } from '../principal/principal.component';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -77,5 +79,8 @@ export class LoginComponent implements OnInit {
     });
     //this.logeando=true;
   }
-
+  
+  cambiarPagina(ruta : string) {
+    this.router.navigate([`/${ruta}`]);
+  }
 }

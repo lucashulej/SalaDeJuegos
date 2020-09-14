@@ -1,0 +1,11 @@
+<nav class="cnt-navbar">
+    <div class="cnt-secundario" >
+        <button *ngIf="ruta" (click)='volver()'>VOLVER</button>
+    </div>
+    <div class="cnt-primario">
+        <label>SALA DE JUEGOS</label>
+    </div>
+    <div class="cnt-secundario">
+        <button *ngIf="presentacion" (click)='quienSoy()'>QUIEN SOY</button>
+    </div>
+</nav>
