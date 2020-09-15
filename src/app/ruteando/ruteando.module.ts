@@ -24,6 +24,8 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TaTeTiComponent } from '../componentes/ta-te-ti/ta-te-ti.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { MemotestComponent } from '../componentes/memotest/memotest.component';
+import { CompletaLaPalabraComponent } from '../componentes/completa-la-palabra/completa-la-palabra.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -47,6 +49,8 @@ children:
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'TaTeTi' , component: TaTeTiComponent},
       {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'Memotest' , component: MemotestComponent},
+      {path: 'CompletaLaPalabra' , component: CompletaLaPalabraComponent},
       {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent}]
 },
 {path: '**' , component: ErrorComponent},

@@ -7,12 +7,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MenuCardComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-
-  ngOnInit() {
-  } 
+  ngOnInit() {} 
 
   cambiarPagina(ruta: string) {
     this.router.navigate([`${ruta}`])

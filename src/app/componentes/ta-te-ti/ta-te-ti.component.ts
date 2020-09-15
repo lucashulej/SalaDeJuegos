@@ -22,19 +22,21 @@ export class TaTeTiComponent implements OnInit {
   }
 
   jugar(casillero:number) {
-    this.cuadrados[casillero] = "x";
-    if(this.verificarGanador("x")) { 
-      this.mostrarResultado("gano!");
-    } else { 
-      if(this.verificarEmpate()) {
-        this.mostrarResultado("empate");
-      } else {
-        this.jugarCpu();
-        if(this.verificarGanador("o")) {
-          this.mostrarResultado("perdio");
+    if(this.cuadrados[casillero] == null) {
+      this.cuadrados[casillero] = "x";
+      if(this.verificarGanador("x")) { 
+        this.mostrarResultado("gano!");
+      } else { 
+        if(this.verificarEmpate()) {
+          this.mostrarResultado("empate");
         } else {
-          if(this.verificarEmpate()) {
-            this.mostrarResultado("empate");
+          this.jugarCpu();
+          if(this.verificarGanador("o")) {
+            this.mostrarResultado("perdio");
+          } else {
+            if(this.verificarEmpate()) {
+              this.mostrarResultado("empate");
+            }
           }
         }
       }
@@ -45,7 +47,7 @@ export class TaTeTiComponent implements OnInit {
     let casillaHabilitada = false;
     let casilla;
     do {
-      casilla = Math.floor(Math.random() * (9 - 0)) + 0;
+      casilla = Math.floor(Math.random() * 9 + 0);
       if(this.cuadrados[casilla] == null) {
         casillaHabilitada = true;
       }

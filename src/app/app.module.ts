@@ -56,6 +56,8 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
+import { MemotestComponent } from './componentes/memotest/memotest.component';
+import { CompletaLaPalabraComponent } from './componentes/completa-la-palabra/completa-la-palabra.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,9 @@ import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
     SexoPipe,
     NavBarComponent,
     PiedraPapelTijeraComponent,
-    TaTeTiComponent
+    TaTeTiComponent,
+    MemotestComponent,
+    CompletaLaPalabraComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,8 @@ body{
     --white: #d1f7ff;
     --light-blue: #05d9e8;
     --dark-blue: #01012b;
+    --purple: #BE60BF;
+    --dark-red: #730237;
 }
 
 @font-face{
@@ -34,10 +36,10 @@ body{
         box-shadow:
         0 0 .5rem #fff,
         0 0 .5rem #fff,
-        0 0 2rem var(--red),
-        0 0 2rem var(--red),
-        0 0 4rem var(--red),
-        0 0 4rem var(--red)        
+        0 0 2rem var(--purple),
+        0 0 2rem var(--purple),
+        0 0 4rem var(--purple),
+        0 0 4rem var(--purple)        
     }
     20%, 24%, 55% {        
         text-shadow: none;

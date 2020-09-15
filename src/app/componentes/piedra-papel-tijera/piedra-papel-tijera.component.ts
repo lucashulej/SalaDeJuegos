@@ -30,7 +30,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   }
 
   jugarCpu() {
-    switch(Math.floor(Math.random() * (3 - 1)) + 1) {
+    switch(Math.floor(Math.random() * 3 + 1)) {
       case 1:
         this.jugadaCpu = "piedra";
         break;

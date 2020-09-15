@@ -1,0 +1,143 @@
+* {
+    animation: fadeIn 1.5s;  
+}
+  
+.cnt-memotest {
+    width: 50vw;
+    height: 75vh;
+    border-radius: 15%;
+    background: var(--dark-blue);
+    border: 4px solid var(--red);
+    overflow: hidden;
+    animation: flicker 2s infinite alternate;  
+}
+  
+.lbl-memotest {
+    top: 0%;
+    height: 20%;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--red);
+    vertical-align: middle;
+}
+  
+.cnt-juego-memotest {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 0;
+}
+
+button {
+    width: 30%;
+    border: 2px solid var(--light-blue);
+    color: var(--red);
+    background: transparent;
+    font-size: 1rem;
+}
+
+.cnt-tablero-memotest {
+    height: 90%;
+    width: 60%;
+}
+
+h2 {
+    color: var(--light-blue);
+}
+
+.casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8, .casilla_9, .casilla_10, .casilla_11 {
+    height: 25%;
+    width: 25%;
+    background-size: 100% 100%;
+    border: 0px;
+    background-color: var(--light-blue);
+}
+
+.casilla_0 {
+    border-top-left-radius: 25%;
+    border-right: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_1, .casilla_2 {
+    border-left: 1px solid var(--red);
+    border-right: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_3 {
+    border-top-right-radius: 25%;
+    border-left: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_4 {
+    border-right: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_5, .casilla_6 {
+    border-left: 1px solid var(--red);
+    border-right: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_7 {
+    border-left: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.casilla_8 {
+    border-bottom-left-radius: 25%;
+    border-right: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+}
+
+.casilla_9, .casilla_10 {
+    border-left: 1px solid var(--red);
+    border-right: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+}
+
+.casilla_11 {
+    border-bottom-right-radius: 25%;
+    border-left: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+}
+
+.f_0 {
+    background-image: url("../../../assets/imagenes/juegos/completa_la_palabra.png");
+    background-size: 100% 100%;
+}
+
+.f_1 {
+    background-image: url("../../../assets/imagenes/juegos/adivina.png");
+    background-size: 100% 100%;
+}
+
+.f_2 {
+    background-image: url("../../../assets/imagenes/juegos/anagrama.png");
+    background-size: 100% 100%;
+}
+
+.f_3 {
+    background-image: url("../../../assets/imagenes/juegos/cerebro.png");
+    background-size: 100% 100%;
+}
+
+.f_4 {
+    background-image: url("../../../assets/imagenes/juegos/piedra_papel_tijeras.png");
+    background-size: 100% 100%;
+}
+
+.f_5 {
+    background-image: url("../../../assets/imagenes/juegos/tateti.png");
+    background-size: 100% 100%;
+}
