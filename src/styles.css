@@ -13,12 +13,13 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    --red: #ff2a6d;
+    --red: #db2a40;
     --white: #d1f7ff;
     --light-blue: #05d9e8;
     --dark-blue: #01012b;
-    --purple: #BE60BF;
+    --purple: #d071d1;
     --dark-red: #730237;
+    --blue: #1c2b48;
 }
 
 @font-face{

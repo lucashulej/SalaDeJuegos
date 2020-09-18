@@ -18,6 +18,7 @@ export class MemotestComponent implements OnInit {
   indexA:number;
   indexB:number;
   intentos:number;
+  desabilitar:boolean = false;
 
   constructor() {}
 
@@ -42,22 +43,25 @@ export class MemotestComponent implements OnInit {
         this.tarjetaA = this.cuadrados[casillero];
         this.indexA = casillero;
       } else {
+        this.desabilitar=true;
         this.tarjetaB = this.cuadrados[casillero];
         this.indexB = casillero;
-        if(this.tarjetaA == this.tarjetaB) {
-          this.verficiarGanador();
-        } else {
-          this.intentos--;
-          if(this.intentos < 0) {
-            this.jugadorPerdio();
+        setTimeout(() => {
+          if(this.tarjetaA == this.tarjetaB) {
+            this.verficiarGanador();
           } else {
-            this.mostrar[this.indexA] = false;
-            this.mostrar[this.indexB] = false;
+            this.intentos--;
+            if(this.intentos < 0) {
+              this.jugadorPerdio();
+            } else {
+              this.mostrar[this.indexA] = false;
+              this.mostrar[this.indexB] = false;
+            }
           }
-         
-        }
-        this.tarjetaA = null;
-        this.tarjetaB = null;
+          this.desabilitar=false;
+          this.tarjetaA = null;
+          this.tarjetaB = null;
+        }, 500);
       }
     }
   }

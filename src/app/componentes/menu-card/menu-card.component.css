@@ -35,7 +35,7 @@ button {
   width: 25%;
   height: 80%;
   border-radius: 25%;
-  border: 2px solid var(--red);
+  border: 0px;
   background: var(--dark-red);
   animation: flickerCustom 2s infinite alternate; 
 }

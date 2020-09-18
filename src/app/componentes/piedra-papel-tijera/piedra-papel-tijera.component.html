@@ -2,16 +2,18 @@
 <div class="cnt-ppt">
   <label class="lbl-ppt">piedra, papel o tijera</label>
   <div class="cnt-juego-ppt">
-    <div *ngIf="jugadaActiva" class="cnt-resultados-ppt">
-        <div class="jugador" [ngClass]="{fondoPiedra: jugadaElegida == 'piedra', fondoPapel: jugadaElegida == 'papel', fondoTijera: jugadaElegida == 'tijera'}"></div>
+    <div *ngIf="comenzar" class="cnt-resultados-ppt">
+        <div *ngIf="!mostrarMensaje" class="jugador" [ngClass]="{fondoPiedra: jugadaElegida == 'piedra', fondoPapel: jugadaElegida == 'papel', fondoTijera: jugadaElegida == 'tijera'}"></div>
+        <h2 *ngIf="!mostrarMensaje">{{puntosJugador}}</h2>
         <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
-        <div class="cpu" [ngClass]="{fondoPiedra: jugadaCpu == 'piedra', fondoPapel: jugadaCpu == 'papel', fondoTijera: jugadaCpu == 'tijera'}"></div>
+        <h2 *ngIf="!mostrarMensaje">{{puntosCpu}}</h2>
+        <div *ngIf="!mostrarMensaje" class="cpu" [ngClass]="{fondoPiedra: jugadaCpu == 'piedra', fondoPapel: jugadaCpu == 'papel', fondoTijera: jugadaCpu == 'tijera', fondoSpinner: spinner}"></div>
     </div>
-    <h2 *ngIf="comenzar && !jugadaActiva">eliga su jugada</h2>
-    <div *ngIf="comenzar && !jugadaActiva" class="cnt-jugadas-ppt">
-        <button class="piedra" (click)="jugar('piedra')"></button>
-        <button class="papel" (click)="jugar('papel')"></button>
-        <button class="tijera" (click)="jugar('tijera')"></button>
+    <h2 *ngIf="comenzar && !mostrarMensaje">eliga su jugada</h2>
+    <div *ngIf="comenzar && !mostrarMensaje" class="cnt-jugadas-ppt">
+        <button [disabled]="desabilitar" class="piedra" (click)="jugar('piedra')"></button>
+        <button [disabled]="desabilitar" class="papel" (click)="jugar('papel')"></button>
+        <button [disabled]="desabilitar" class="tijera" (click)="jugar('tijera')"></button>
     </div>
     <button *ngIf="!comenzar" type="button" (click)="comenzarJuego()">comenzar</button>
   </div>

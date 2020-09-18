@@ -12,6 +12,7 @@ export class TaTeTiComponent implements OnInit {
   cuadrados = [];
   mensaje:string;
   mostrarMensaje:boolean = false;
+  desabilitar:boolean = false;
 
   constructor() {
     this.cuadrados = new Array(9);
@@ -25,17 +26,18 @@ export class TaTeTiComponent implements OnInit {
     if(this.cuadrados[casillero] == null) {
       this.cuadrados[casillero] = "x";
       if(this.verificarGanador("x")) { 
-        this.mostrarResultado("gano!");
+        this.mostrarResultado("ganaste");
       } else { 
         if(this.verificarEmpate()) {
-          this.mostrarResultado("empate");
+          this.mostrarResultado("empataste");
         } else {
-          this.jugarCpu();
+          this.desabilitar = true;
+          setTimeout(() => this.jugarCpu(), 1000);
           if(this.verificarGanador("o")) {
-            this.mostrarResultado("perdio");
+            this.mostrarResultado("perdiste");
           } else {
             if(this.verificarEmpate()) {
-              this.mostrarResultado("empate");
+              this.mostrarResultado("empataste");
             }
           }
         }
@@ -53,6 +55,7 @@ export class TaTeTiComponent implements OnInit {
       }
     } while(!casillaHabilitada);
     this.cuadrados[casilla] = "o";
+    this.desabilitar = false;
   }
 
   verificarGanador(jugador:string) {

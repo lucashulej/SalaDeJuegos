@@ -43,11 +43,11 @@ export class AdivinaElNumeroComponent implements OnInit {
   enviarMensaje(ganador:boolean=false) {
     this.mostrarMensaje = true;
     if(ganador) {
-      this.mensaje = `gano!`;  
+      this.mensaje = "ganaste";  
       setTimeout(() => this.jugadorGano(), 4000);
     } else {
       if(this.contador > 7) {
-        this.mensaje = "perdio";
+        this.mensaje = "perdiste";
         setTimeout(() => this.jugadorPerdio(), 4000);
       } else {
         if(this.nuevoJuego.numeroIngresado > this.nuevoJuego.numeroSecreto) {

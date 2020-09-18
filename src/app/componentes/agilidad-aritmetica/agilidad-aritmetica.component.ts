@@ -75,7 +75,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
   jugadorGano() {
     this.comenzar = false;
-    this.mensaje = "gano!";
+    this.mensaje = "ganaste";
     this.mostrarMensaje = true;
     this.reiniciarContador();
     setTimeout(() => this.ocultarMensaje(), 4000);
@@ -83,7 +83,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
   jugadorPerdio() {
     this.comenzar = false;
-    this.mensaje = "perdio";
+    this.mensaje = "perdiste";
     this.mostrarMensaje = true;
     this.reiniciarContador();
     setTimeout(() => this.ocultarMensaje(), 4000);

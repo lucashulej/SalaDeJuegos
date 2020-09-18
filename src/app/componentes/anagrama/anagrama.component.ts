@@ -16,10 +16,12 @@ export class AnagramaComponent implements OnInit {
   palabraIngresada:string;
   mensaje:string;
   mostrarMensaje:boolean = false;
+  intentos:number = 5;
 
   constructor() {}
 
   comenzarJuego() {
+    this.intentos = 5;
     this.comenzar = true;
     this.palabraIngresada = "";
     this.palabraSecreta = this.listaPalabras[Math.floor(Math.random() * (9 - 0)) + 0];
@@ -50,19 +52,22 @@ export class AnagramaComponent implements OnInit {
     if(this.palabraSecreta == this.palabraIngresada) {
       this.jugadorGano();
     } else {
-      this.jugadorPerdio();
+      this.intentos--;
+      if(this.intentos < 0) {
+        this.jugadorPerdio();
+      }
     }
   }
 
   jugadorGano() {
     this.mostrarMensaje = true;
-    this.mensaje = "gano!";
+    this.mensaje = "ganaste";
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
-    this.mensaje = "perdio";
+    this.mensaje = "perdiste";
     setTimeout(() => this.reiniciar(), 4000);
   }
 

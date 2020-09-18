@@ -1,1 +1,12 @@
-<p>completa-la-palabra works!</p>
+<app-nav-bar [ruta]="'Juegos'"></app-nav-bar>
+<div class="cnt-completa">
+  <label class="lbl-completa">completa la palabra</label>
+  <div class="cnt-juego-completa">
+    <h2 *ngIf="comenzar && !mostrarMensaje">{{intentos}} intentos</h2>
+    <h2 *ngIf="comenzar && !mostrarMensaje">{{palabraSinLetra}}</h2>
+    <input *ngIf="comenzar && !mostrarMensaje" type="text" [(ngModel)]="letraIngresada" placeholder="ingrese la letrab faltante" max="1">
+    <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
+    <button *ngIf="comenzar && !mostrarMensaje" type="button" (click)="verificar()">verificar</button>
+    <button *ngIf="!comenzar" type="button" (click)="comenzarJuego()">comenzar</button>
+  </div>
+</div>

@@ -2,6 +2,7 @@
 <div class="cnt-adivina">
   <label class="lbl-adivina">adivina el numero</label>
   <div class="cnt-juego-adivina">
+    <label *ngIf="comenzar">ingrese numero</label>
     <input *ngIf="comenzar" type="number" value="0" [(ngModel)]="nuevoJuego.numeroIngresado" min="0" max="100">
     <h2 *ngIf="comenzar">{{nuevoJuego.numeroIngresado}}</h2>
     <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>

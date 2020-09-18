@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class PiedraPapelTijeraComponent implements OnInit {
 
   comenzar:boolean = false;
-  jugadaActiva:boolean = false;
   mensaje:string;
   mostrarMensaje:boolean = false;
   jugadaElegida:string;
@@ -16,17 +15,27 @@ export class PiedraPapelTijeraComponent implements OnInit {
   piedra: boolean = false;
   papel: boolean = false;
   tijera: boolean = false;
+  puntosJugador:number = 0;
+  puntosCpu:number = 0;
+  desabilitar:boolean = false;
+  spinner:boolean = true;
 
   constructor() { }
 
   comenzarJuego() {
     this.comenzar = true;
+    this.puntosJugador = 0;
+    this.puntosCpu = 0;
+    this.spinner = false;
+    this.mensaje = "eliga su jugada";
   }
 
   jugar(jugada:string) {
-    this.jugadaActiva = true;
+    this.mostrarMensaje = false;
     this.jugadaElegida = jugada;
-    this.jugarCpu();
+    this.desabilitar = true;
+    this.spinner = true;
+    setTimeout(() => this.jugarCpu(), 1000);
   }
 
   jugarCpu() {
@@ -41,12 +50,14 @@ export class PiedraPapelTijeraComponent implements OnInit {
         this.jugadaCpu = "tijera";
         break;
     }
+    this.spinner = false;
+    this.desabilitar = false;
     this.verificarGanador();
   }
 
   verificarGanador() {
     if(this.jugadaElegida == this.jugadaCpu) {
-      this.jugarCpu();
+      this.desabilitar = false;
     } else {
       if(this.jugadaElegida == "piedra") {
         if(this.jugadaCpu == "papel") {
@@ -71,21 +82,32 @@ export class PiedraPapelTijeraComponent implements OnInit {
   }
 
   jugadorGano() {
-    this.mostrarMensaje = true;
-    this.mensaje = "gano!";
-    setTimeout(() => this.reiniciar(), 4000);
+    this.puntosJugador++; 
+    if(this.puntosJugador >= 3) {
+      this.mensaje = "ganaste";
+      this.mostrarMensaje = true;
+      setTimeout(() => this.reiniciar(), 4000);
+    } else {
+      this.desabilitar = false;
+    }
   }
 
   jugadorPerdio() {
-    this.mostrarMensaje = true;
-    this.mensaje = "perdio";
-    setTimeout(() => this.reiniciar(), 4000);
+    this.puntosCpu++;
+    if(this.puntosCpu >= 3) {
+      this.mensaje = "perdiste";
+      this.mostrarMensaje = true;
+      setTimeout(() => this.reiniciar(), 4000);
+    } else {
+      this.desabilitar = false;
+    }
   }
 
   reiniciar() {
     this.mostrarMensaje = false;
-    this.jugadaActiva = false;
     this.comenzar = false;
+    this.jugadaElegida = "";
+    this.jugadaCpu = "";
   }
 
   ngOnInit() {}

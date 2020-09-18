@@ -2,6 +2,7 @@
 <div class="cnt-anagrama">
   <label class="lbl-anagrama">anagrama</label>
   <div class="cnt-juego-anagrama">
+    <h2 *ngIf="comenzar && !mostrarMensaje">{{intentos}} intentos</h2>
     <h2 *ngIf="comenzar && !mostrarMensaje">{{palabraSecretaDesordenada}}</h2>
     <input *ngIf="comenzar && !mostrarMensaje" type="text" [(ngModel)]="palabraIngresada" placeholder="ingrese la palabra">
     <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
