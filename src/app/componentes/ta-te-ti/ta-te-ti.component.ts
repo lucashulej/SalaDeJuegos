@@ -1,5 +1,6 @@
 import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-ta-te-ti',
@@ -14,7 +15,7 @@ export class TaTeTiComponent implements OnInit {
   mostrarMensaje:boolean = false;
   desabilitar:boolean = false;
 
-  constructor() {
+  constructor(private authService : AuthService) {
     this.cuadrados = new Array(9);
   }
 
@@ -43,6 +44,10 @@ export class TaTeTiComponent implements OnInit {
         }
       }
     }
+  }
+
+  cargarVictoria() {
+   
   }
 
   jugarCpu() {
@@ -107,7 +112,6 @@ export class TaTeTiComponent implements OnInit {
     setTimeout(() => this.reiniciar(), 4000);
   }
 
-  
   reiniciar() {
     this.mostrarMensaje = false;
     this.cuadrados = new Array(9);

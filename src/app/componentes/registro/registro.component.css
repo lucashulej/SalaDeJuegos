@@ -5,8 +5,8 @@
 .cnt-registro {
     width: 50vw;
     height: 75vh;
-    background: var(--dark-blue);
-    border: 4px solid var(--red);
+    background: var(--dark-red);
+    border: 0px;
     border-radius: 15%;
     animation: flicker 2s infinite alternate;  
 }
@@ -48,7 +48,7 @@ label {
 
 input {
     border: 0px;
-    border-bottom: 2px solid var(--light-blue);
+    border-bottom: 2px solid var(--red);
     width: 50%;
     text-align: center;
     color: var(--red);
@@ -57,7 +57,7 @@ input {
 
 button {
     width: 30%;
-    border: 2px solid var(--light-blue);
+    border: 2px solid var(--red);
     color: var(--red);
     background: transparent;
 }
@@ -70,18 +70,3 @@ button:active {
     transform: translateY(4px);
 }
 
-@keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        box-shadow:
-        0 0 .5rem #fff,
-        0 0 .5rem #fff,
-        0 0 2rem var(--red),
-        0 0 2rem var(--red),
-        0 0 4rem var(--red),
-        0 0 4rem var(--red)        
-    }
-    20%, 24%, 55% {        
-        text-shadow: none;
-        box-shadow: none;
-    }    
-}

@@ -59,6 +59,21 @@ import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './componentes/memotest/memotest.component';
 import { CompletaLaPalabraComponent } from './componentes/completa-la-palabra/completa-la-palabra.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyALLQbVvUFIGTgLVvKITojF0KdH7MUtk28",
+  authDomain: "saladejuegos-5312b.firebaseapp.com",
+  databaseURL: "https://saladejuegos-5312b.firebaseio.com",
+  projectId: "saladejuegos-5312b",
+  storageBucket: "saladejuegos-5312b.appspot.com",
+  messagingSenderId: "94491683646",
+  appId: "1:94491683646:web:1a684e9800ec462f7eda6f"
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +110,9 @@ import { CompletaLaPalabraComponent } from './componentes/completa-la-palabra/co
     FormsModule,
     RuteandoModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule, 
+    AngularFireDatabaseModule, 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

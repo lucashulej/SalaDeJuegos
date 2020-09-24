@@ -4,18 +4,19 @@
       <label class="lbl-title-registro">REGISTRO</label>
       <div class="lbl-cnt-registro">
         <label><b>Usuario</b></label>
-        <input type="text"  name="uname" required>
+        <input type="text"  name="uname" [(ngModel)]="email" required>
       </div>
       <div class="lbl-cnt-registro">
         <label><b>Clave</b></label>
-        <input type="password" name="psw" required>
+        <input type="password" name="psw" [(ngModel)]="clave" required>
       </div>
       <div class="lbl-cnt-registro">
         <label><b>Repita Clave</b></label>
-        <input type="password" name="psw" required>
+        <input type="password" name="psw" [(ngModel)]="claveRepetida" required>
       </div>
+      <label *ngIf="mostrarError">{{mensajeError}}</label>
       <div class="btn-cnt-registro">
-        <button type="button">Registrar</button>
+        <button type="button" (click)="Registrarse()">Registrar</button>
       </div>
   </form>
 </div>

@@ -4,21 +4,17 @@
       <label class="lbl-title-login">LOGIN</label>
       <div class="lbl-cnt-login">
         <label><b>Usuario</b></label>
-        <input type="text"  [(ngModel)]="usuario"  name="uname" required>
+        <input type="text" [(ngModel)]="email" name="usuario" required>
       </div>
       <div class="lbl-cnt-login">
         <label><b>Clave</b></label>
-        <input type="password" [(ngModel)]="clave" name="psw" required>
+        <input type="password" [(ngModel)]="clave" name="clave" required>
       </div>
+      <label *ngIf="mostrarError">{{mensajeError}}</label>
       <div class="btn-cnt-login">
-        <!--<button type="button" *ngIf="logeando" (click)="MoverBarraDeProgreso()">Ingresar</button>-->
-        <button type="button" (click)="cambiarPagina('Principal')">Ingresar</button>
-        <button type="button" (click)="cambiarPagina('Registro')" >Registrarse</button>
+        <button type="button" (click)="Entrar()">Ingresar</button>
+        <button type="button" (click)="Cargar()">Cargar Usuario</button>
+        <button type="button" (click)="Registrarse()">Registrarse</button>
       </div>
-      <div *ngIf="!logeando" class="progress">
-        <div class="progress-bar progress-bar-info progress-bar-striped active" [class]="clase" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width]="ProgresoDeAncho" >
-          {{progresoMensaje}} - {{progreso}}%
-        </div>
-    </div>
   </form>
 </div>
