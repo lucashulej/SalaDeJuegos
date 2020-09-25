@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { strict } from 'assert';
-import { stringify } from 'querystring';
+import { ResultadosService } from '../../servicios/resultados.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -18,7 +17,7 @@ export class AnagramaComponent implements OnInit {
   mostrarMensaje:boolean = false;
   intentos:number = 5;
 
-  constructor() {}
+  constructor(private resultadoService : ResultadosService) {}
 
   comenzarJuego() {
     this.intentos = 5;
@@ -62,18 +61,28 @@ export class AnagramaComponent implements OnInit {
   jugadorGano() {
     this.mostrarMensaje = true;
     this.mensaje = "ganaste";
+    this.cargarVictoria();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "perdiste";
+    this.cargarPerdida();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
+  }
+
+  cargarVictoria() {
+    this.resultadoService.gano("anagrama");
+  }
+
+  cargarPerdida() {
+    this.resultadoService.perdio("anagrama");
   }
 
   ngOnInit() {}

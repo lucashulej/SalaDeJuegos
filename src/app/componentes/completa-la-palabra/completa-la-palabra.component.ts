@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultadosService } from '../../servicios/resultados.service';
 
 @Component({
   selector: 'app-completa-la-palabra',
@@ -17,7 +18,7 @@ export class CompletaLaPalabraComponent implements OnInit {
   comenzar:boolean = false;
   indexDePalabra:number;
   indexDeLetra:number;
-  constructor() { }
+  constructor(private resultadoService : ResultadosService) { }
 
   comenzarJuego() {
     this.letraIngresada = "";
@@ -44,18 +45,28 @@ export class CompletaLaPalabraComponent implements OnInit {
   jugadorGano() {
     this.mostrarMensaje = true;
     this.mensaje = "ganaste";
+    this.cargarVictoria();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "perdiste";
+    this.cargarPerdida();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
+  }
+
+  cargarVictoria() {
+    this.resultadoService.gano("completaLaPalabra");
+  }
+
+  cargarPerdida() {
+    this.resultadoService.perdio("completaLaPalabra");
   }
 
   ngOnInit() {}

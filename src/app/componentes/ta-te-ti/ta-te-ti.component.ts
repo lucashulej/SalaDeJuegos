@@ -1,8 +1,5 @@
-import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ResultadosService } from '../../servicios/resultados.service';
-import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-ta-te-ti',
@@ -17,7 +14,7 @@ export class TaTeTiComponent implements OnInit {
   mostrarMensaje:boolean = false;
   desabilitar:boolean = false;
 
-  constructor(private resultado : ResultadosService) {
+  constructor(private resultadoService : ResultadosService) {
     this.cuadrados = new Array(9);
   }
 
@@ -52,11 +49,11 @@ export class TaTeTiComponent implements OnInit {
   }
 
   cargarVictoria() {
-    this.resultado.gano("tateti");
+    this.resultadoService.gano("tateti");
   }
 
   cargarPerdida() {
-    this.resultado.perdio("tateti");
+    this.resultadoService.perdio("tateti");
   }
 
   jugarCpu() {

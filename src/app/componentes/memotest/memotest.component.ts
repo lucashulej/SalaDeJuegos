@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs-compat/operator/map';
+import { ResultadosService } from '../../servicios/resultados.service';
 
 @Component({
   selector: 'app-memotest',
@@ -20,7 +21,7 @@ export class MemotestComponent implements OnInit {
   intentos:number;
   desabilitar:boolean = false;
 
-  constructor() {}
+  constructor(private resultadoService : ResultadosService) {}
 
   comenzarJuego() {
     this.comenzar = true;
@@ -87,18 +88,28 @@ export class MemotestComponent implements OnInit {
   jugadorGano() {
     this.mostrarMensaje = true;
     this.mensaje = "gano!";
+    this.cargarVictoria();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "perdio";
+    this.cargarPerdida();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
+  }
+
+  cargarVictoria() {
+    this.resultadoService.gano("memotest");
+  }
+
+  cargarPerdida() {
+    this.resultadoService.perdio("memotest");
   }
 
   ngOnInit() {}

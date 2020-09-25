@@ -26,10 +26,10 @@ import { TaTeTiComponent } from '../componentes/ta-te-ti/ta-te-ti.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { MemotestComponent } from '../componentes/memotest/memotest.component';
 import { CompletaLaPalabraComponent } from '../componentes/completa-la-palabra/completa-la-palabra.component';
+import { JugadoresComponent } from '../componentes/jugadores/jugadores.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: '' , component: LoginComponent},
 {path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent},
@@ -37,7 +37,7 @@ const MiRuteo = [
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
+{path: 'Jugadores' , component: JugadoresComponent},
 
 { path: 'Juegos' ,
 component: JuegosComponent ,

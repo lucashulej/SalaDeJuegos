@@ -10,19 +10,16 @@ export class ResultadosService {
 
   usuarios: Observable<any[]>;
   listaUsuarios: any[];
-
   juegos: Observable<any[]>;
-
 
   constructor(private authService : AuthService,private db : AngularFireDatabase) { 
     this.usuarios = this.db.list('usuarios').valueChanges(); 
     this.usuarios.subscribe(usuarios => this.listaUsuarios = usuarios, error => console.log(error));
-
     this.juegos = this.db.list('juegos').valueChanges(); 
-
   }
 
   gano(juego) {
+    console.log("gano de resultado service");
     let keyJuego;
     let puntaje;
     this.authService.getUser().then((response:any) => {
@@ -40,6 +37,7 @@ export class ResultadosService {
   }
 
   perdio(juego) {
+    console.log("perdio de resultado service");
     let keyJuego;
     let puntaje;
     this.authService.getUser().then((response:any) => {

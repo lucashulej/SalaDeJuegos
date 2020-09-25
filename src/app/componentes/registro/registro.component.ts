@@ -25,7 +25,6 @@ export class RegistroComponent implements OnInit {
     this.claveRepetida= '';
     this.usuarios = db.list('usuarios').valueChanges(); 
     this.usuarios.subscribe(usuarios => this.lista = usuarios, error => console.log(error));
-   
   }
 
   ngOnInit() {}

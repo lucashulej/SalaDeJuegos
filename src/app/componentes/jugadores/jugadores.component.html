@@ -1,0 +1,17 @@
+<app-nav-bar [ruta]="'Principal'"></app-nav-bar>
+<div class="cnt-jugadores">
+    <table>
+        <tbody>
+            <tr>
+                <td class="main-td">usuario</td>
+                <td class="main-td">gano</td>
+                <td class="main-td">perdio</td>
+            </tr>
+            <tr *ngFor="let usuario of lista">
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.gano}}</td>
+                <td>{{usuario.perdio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

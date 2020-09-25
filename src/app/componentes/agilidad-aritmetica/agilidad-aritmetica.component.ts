@@ -1,8 +1,8 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAgilidad } from '../../clases/juego-agilidad'
-
 import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { ResultadosService } from '../../servicios/resultados.service';
+
 @Component({
   selector: 'app-agilidad-aritmetica',
   templateUrl: './agilidad-aritmetica.component.html',
@@ -23,7 +23,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   mostrarMensaje:boolean = false;
   private subscription: Subscription;
 
-  constructor() {
+  constructor(private resultadoService : ResultadosService) {
     this.tiempo=10; 
     this.nuevoJuego = new JuegoAgilidad();
     console.info("Inicio agilidad");  
@@ -78,6 +78,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.mensaje = "ganaste";
     this.mostrarMensaje = true;
     this.reiniciarContador();
+    this.cargarVictoria();
     setTimeout(() => this.ocultarMensaje(), 4000);
   }
 
@@ -86,6 +87,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.mensaje = "perdiste";
     this.mostrarMensaje = true;
     this.reiniciarContador();
+    this.cargarPerdida();
     setTimeout(() => this.ocultarMensaje(), 4000);
   }
 
@@ -97,6 +99,14 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.nuevoJuego.numeroIngresado = "";
     this.tiempo = 10;
     clearInterval(this.repetidor);
+  }
+
+  cargarVictoria() {
+    this.resultadoService.gano("agilidadAritmetica");
+  }
+
+  cargarPerdida() {
+    this.resultadoService.perdio("agilidadAritmetica");
   }
 
   ngOnInit() {}

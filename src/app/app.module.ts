@@ -62,6 +62,7 @@ import { CompletaLaPalabraComponent } from './componentes/completa-la-palabra/co
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyALLQbVvUFIGTgLVvKITojF0KdH7MUtk28",
@@ -103,7 +104,8 @@ var firebaseConfig = {
     PiedraPapelTijeraComponent,
     TaTeTiComponent,
     MemotestComponent,
-    CompletaLaPalabraComponent
+    CompletaLaPalabraComponent,
+    JugadoresComponent
   ],
   imports: [
     BrowserModule,
