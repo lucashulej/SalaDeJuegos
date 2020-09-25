@@ -1,6 +1,8 @@
 import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../servicios/auth.service';
+import { Observable } from 'rxjs';
+import { ResultadosService } from '../../servicios/resultados.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-ta-te-ti',
@@ -15,7 +17,8 @@ export class TaTeTiComponent implements OnInit {
   mostrarMensaje:boolean = false;
   desabilitar:boolean = false;
 
-  constructor(private authService : AuthService) {
+
+  constructor(private resultado : ResultadosService) {
     this.cuadrados = new Array(9);
   }
 
@@ -27,6 +30,7 @@ export class TaTeTiComponent implements OnInit {
     if(this.cuadrados[casillero] == null) {
       this.cuadrados[casillero] = "x";
       if(this.verificarGanador("x")) { 
+        this.cargarVictoria();
         this.mostrarResultado("ganaste");
       } else { 
         if(this.verificarEmpate()) {
@@ -36,6 +40,7 @@ export class TaTeTiComponent implements OnInit {
           //setTimeout(() => this.jugarCpu(), 1000);
           this.jugarCpu();
           if(this.verificarGanador("o")) {
+            this.cargarPerdida();
             this.mostrarResultado("perdiste");
           } else {
             if(this.verificarEmpate()) {
@@ -48,7 +53,11 @@ export class TaTeTiComponent implements OnInit {
   }
 
   cargarVictoria() {
-   
+    this.resultado.gano();
+  }
+
+  cargarPerdida() {
+    this.resultado.perdio();
   }
 
   jugarCpu() {

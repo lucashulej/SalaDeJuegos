@@ -25,6 +25,7 @@ export class RegistroComponent implements OnInit {
     this.claveRepetida= '';
     this.usuarios = db.list('usuarios').valueChanges(); 
     this.usuarios.subscribe(usuarios => this.lista = usuarios, error => console.log(error));
+   
   }
 
   ngOnInit() {}
@@ -38,8 +39,10 @@ export class RegistroComponent implements OnInit {
         setTimeout(() => this.esconderMensaje(), 2000);
       } else {
         this.authService.singUp(this.email, this.clave).then((response: any) => {
-          this.db.list('usuarios').push({email:this.email,password:this.clave,gano:0,perdio:0});
-          this.router.navigate(['/Login']);
+          this.authService.getUser().then((response:any) => {
+            this.db.list('usuarios').set(response.uid,{email:this.email,password:this.clave,gano:0,perdio:0,id:response.uid});
+            this.router.navigate(['/Login']);
+          });
         },(error: any) => {
           this.mensajeError = error;
           this.mostrarError = true;
