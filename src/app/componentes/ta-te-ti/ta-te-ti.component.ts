@@ -17,7 +17,6 @@ export class TaTeTiComponent implements OnInit {
   mostrarMensaje:boolean = false;
   desabilitar:boolean = false;
 
-
   constructor(private resultado : ResultadosService) {
     this.cuadrados = new Array(9);
   }
@@ -53,11 +52,11 @@ export class TaTeTiComponent implements OnInit {
   }
 
   cargarVictoria() {
-    this.resultado.gano();
+    this.resultado.gano("tateti");
   }
 
   cargarPerdida() {
-    this.resultado.perdio();
+    this.resultado.perdio("tateti");
   }
 
   jugarCpu() {

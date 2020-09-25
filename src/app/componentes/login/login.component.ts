@@ -46,16 +46,8 @@ export class LoginComponent implements OnInit {
   }
 
   Cargar() {
-    /*
     this.email = "admin@admin.com";
     this.clave = "123456";
-    */
-    this.authService.getUser().then((response:any) => {
-      console.log(response);
-    }).catch((error:any) => {
-      console.log(error);
-    });
-    
   }
   
   Registrarse() {
