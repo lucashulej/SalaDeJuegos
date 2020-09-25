@@ -33,7 +33,8 @@ export class TaTeTiComponent implements OnInit {
           this.mostrarResultado("empataste");
         } else {
           this.desabilitar = true;
-          setTimeout(() => this.jugarCpu(), 1000);
+          //setTimeout(() => this.jugarCpu(), 1000);
+          this.jugarCpu();
           if(this.verificarGanador("o")) {
             this.mostrarResultado("perdiste");
           } else {
