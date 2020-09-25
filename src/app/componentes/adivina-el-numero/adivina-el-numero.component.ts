@@ -26,6 +26,7 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.nuevoJuego.generarnumero();
     this.comenzar=true;
     this.contador=0;
+    this.nuevoJuego.numeroIngresado=0;
   }
 
   verificar()
