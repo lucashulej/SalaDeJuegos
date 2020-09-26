@@ -27,6 +27,7 @@ import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { MemotestComponent } from '../componentes/memotest/memotest.component';
 import { CompletaLaPalabraComponent } from '../componentes/completa-la-palabra/completa-la-palabra.component';
 import { JugadoresComponent } from '../componentes/jugadores/jugadores.component';
+import { ResultadosComponent } from '../componentes/resultados/resultados.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -38,7 +39,7 @@ const MiRuteo = [
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
 {path: 'Jugadores' , component: JugadoresComponent},
-
+{path: 'Resultados' , component: ResultadosComponent},
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:

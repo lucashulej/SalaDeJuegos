@@ -63,6 +63,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
+import { ResultadosComponent } from './componentes/resultados/resultados.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyALLQbVvUFIGTgLVvKITojF0KdH7MUtk28",
@@ -105,7 +106,8 @@ var firebaseConfig = {
     TaTeTiComponent,
     MemotestComponent,
     CompletaLaPalabraComponent,
-    JugadoresComponent
+    JugadoresComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,

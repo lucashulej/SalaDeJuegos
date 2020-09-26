@@ -1,0 +1,27 @@
+.cnt-resultados {
+    width: 50vw;
+    height: 75vh;
+    border-radius: 15%;
+    background: var(--dark-red);
+    border: 0px;
+    overflow: hidden;
+    animation: flicker 2s infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
+
+table {
+    width: 90%;
+    color: var(--white);
+    text-align: center;
+}
+
+td {
+    border: 1px solid var(--white);
+}
+
+.main-td {
+    background-color: var(--red);
+}
