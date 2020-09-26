@@ -1,4 +1,5 @@
 .cnt-resultados {
+    position: relative;
     width: 50vw;
     height: 75vh;
     border-radius: 15%;
@@ -12,8 +13,17 @@
     flex-direction: column;  
 }
 
+.cnt-tabla-resultados {
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    overflow-y: scroll;
+}
+
 table {
-    width: 90%;
+    height: 100%;
+    width: 100%;
     color: var(--white);
     text-align: center;
 }
